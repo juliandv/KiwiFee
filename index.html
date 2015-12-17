@@ -1,0 +1,69 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Kiwi Fee - A Success Fee Calculator For Trade Me</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<link href='https://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+    <header>
+        <div class="headerContent">
+            <p>Kiwi Fee</p>
+        </div>
+    </header>
+    <div class="content">
+        <p id="subtitle">A simple tool to find out Trade Me success fee costs</p>
+        <form name="frm" id="frm">
+            Sale Price
+            <input name="salePrice" value="" placeholder="$0.00">
+<!--
+            <input type="checkbox" name="payNow"><label for="c1">Pay Now</label>
+            <input type="checkbox" name="topSeller"><label>Top Seller</label>
+-->
+            
+            <div class="checkboxFive">
+                <span class="checkLabel">Top Seller</span>
+                <input type="checkbox" value="1" id="topSeller" name="topSeller">
+                <label for="topSeller"></label>
+            </div>
+            
+            <div class="checkboxFive">
+                <span class="checkLabel">Pay Now</span>
+                <input type="checkbox" value="1" id="payNow" name="payNow">
+                <label for="payNow"></label>
+            </div>
+            
+            <input type="button" id="calculate" value="Calculate" onclick="eval()">
+        </form>
+    </div>
+    
+        <div id="result">
+            <div class="resultContent">
+                <p>Selling price minus fees / Fees only</p>
+                <form name="frm1"><input id="resultText" name="result" type="text" value="$0.00" disabled></form>
+            </div>
+            <p id="footerText">Created by Julian de Villiers, 2016 - <a href="http://www.juliandv.com">Juliandv.com</a><br>Fees are for general items and are not guaranteed to be current. For more info on Trade Me fees <a href="http://www.trademe.co.nz/help/18/fees-and-fee-calculator">click here</a></p>
+        </div>    
+    <script>
+        function eval(){
+            var price = document.frm.salePrice.value;
+            var fee;
+            var payNowFee = 0;
+            var topSeller = 0;
+            if (price <= 200) {fee = price * 0.079};
+            if (price > 200 && price <= 1500) {fee = 15.80 + (price * 0.049)};
+            if (price > 1500) {fee = 79.50 + (price * 0.019)};
+            if (fee > 149) {fee = 149};
+            if (fee < 0.5) {fee = 0.5};
+            if (price == 0) {fee = 0.0};
+
+         
+            if (document.getElementById('payNow').checked) {payNowFee = (price * 0.0195)};
+            if (document.getElementById('topSeller').checked) {topSeller = (fee + payNowFee) * 0.15};
+            fee = (fee + payNowFee - topSeller).toFixed(2);
+            document.frm1.result.value = '$' + fee;
+        }
+    </script>
+</body>
+</html>
