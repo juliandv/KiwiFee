@@ -19,6 +19,7 @@ p {margin 0;}
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #1cc988;
+    margin: 0 0 200px; /* bottom = footer height */
 
 }
 
@@ -55,18 +56,25 @@ input:focus     { outline:none; }
     color: #ffffff;
 }
 
-#result {
-    position: fixed;
-    bottom: 0px;
+footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 200px;
+    width: 100%; 
+/* 
     height: 30%;
     min-height: 160px;
+
     max-height: 250px;
     width: 100%;
+*/
     margin: 0 auto;
     font-size: 22px;
     font-weight: 300;
     color: #000000;
     background-color: #ff5508;
+    padding: 20px 0;
 }
 #resultText {
     background-color: transparent;
@@ -186,4 +194,63 @@ input[type=checkbox] {
     right:0;
     margin-left:auto;
     margin-right:auto;
+}
+
+
+
+
+
+
+
+
+.onoffswitch {
+    position: relative; width: 200px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+    margin: auto;
+}
+.onoffswitch-checkbox {
+    display: none;
+}
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+/*    border: 2px solid #999999; border-radius: 50px;*/
+}
+.onoffswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block; float: left; width: 50%; height: 34px; padding: 0; line-height: 34px;
+    font-size: 18px; color: white; 
+    box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+    content: "Fees only";
+    padding-left: 12px;
+    background-color: #FFFFFF; color: #ff5508;
+}
+.onoffswitch-inner:after {
+    content: "After fees";
+    padding-right: 12px;
+    background-color: #FFFFFF; color: #ff5508;
+    text-align: right;
+}
+.onoffswitch-switch {
+    display: block; width: 45px; margin: -5.5px;
+    background: #1CC988;
+    position: absolute; top: 0; bottom: 0;
+    right: 162px;
+/*    border: 2px solid #999999;*/
+    border-radius: 50px;
+    transition: all 0.3s ease-in 0s; 
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px; 
+}
+html {
+    position: relative;
+    min-height: 100%;
 }

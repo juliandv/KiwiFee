@@ -17,10 +17,7 @@
         <form name="frm" id="frm">
             Sale Price
             <input name="salePrice" value="" placeholder="$0.00">
-<!--
-            <input type="checkbox" name="payNow"><label for="c1">Pay Now</label>
-            <input type="checkbox" name="topSeller"><label>Top Seller</label>
--->
+
             
             <div class="checkboxFive">
                 <span class="checkLabel">Top Seller</span>
@@ -38,19 +35,32 @@
         </form>
     </div>
     
-        <div id="result">
+        <footer>
             <div class="resultContent">
-                <p>Selling price minus fees / Fees only</p>
+                
+<div class="onoffswitch">
+    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" onclick="eval()">
+    <label class="onoffswitch-label" for="myonoffswitch">
+        <span class="onoffswitch-inner"></span>
+        <span class="onoffswitch-switch"></span>
+    </label>
+</div>
+                
                 <form name="frm1"><input id="resultText" name="result" type="text" value="$0.00" disabled></form>
             </div>
-            <p id="footerText">Created by Julian de Villiers, 2016 - <a href="http://www.juliandv.com">Juliandv.com</a><br>Fees are for general items and are not guaranteed to be current. For more info on Trade Me fees <a href="http://www.trademe.co.nz/help/18/fees-and-fee-calculator">click here</a></p>
-        </div>    
+            <p id="footerText">Created by Julian de Villiers, 2016 - <a href="http://www.juliandv.com">Juliandv.com</a><br>Fees are for general items and are current as of December 2015. For more info on Trade Me fees <a href="http://www.trademe.co.nz/help/18/fees-and-fee-calculator">click here</a><br>
+            <a href="http://mystrd.at/modern-clean-css-sticky-footer/">Sticky Footer</a> - <a href="http://proto.io/freebies/onoff/">CSS3 Switch</a></p>
+        </footer> 
+    
     <script>
+        var fee;
+        var price;
+        
         function eval(){
             var price = document.frm.salePrice.value;
-            var fee;
             var payNowFee = 0;
             var topSeller = 0;
+            var afterFee  = 0;
             if (price <= 200) {fee = price * 0.079};
             if (price > 200 && price <= 1500) {fee = 15.80 + (price * 0.049)};
             if (price > 1500) {fee = 79.50 + (price * 0.019)};
@@ -61,9 +71,24 @@
          
             if (document.getElementById('payNow').checked) {payNowFee = (price * 0.0195)};
             if (document.getElementById('topSeller').checked) {topSeller = (fee + payNowFee) * 0.15};
-            fee = (fee + payNowFee - topSeller).toFixed(2);
-            document.frm1.result.value = '$' + fee;
+            fee = fee + payNowFee - topSeller;
+
+
+            
+if (document.getElementById('myonoffswitch').checked == false) {
+    afterFee = price - fee;
+    afterFee = afterFee.toFixed(2);
+    document.frm1.result.value = '$' + afterFee;
+} else if (document.getElementById('myonoffswitch').checked == true) {
+    fee = fee.toFixed(2);
+    document.frm1.result.value = '$' + fee;
+}
+            
         }
+        
+
+        
     </script>
+    
 </body>
 </html>
