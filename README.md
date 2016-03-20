@@ -2,7 +2,9 @@
 
 Fee calculation web app for [Trade Me](https://www.trademe.co.nz)
 
-Written with HTMl5 and JS
+Written with HTML5 and JS
+
+Maintained by [Julian De Villiers](mailto:me@juliandv.com) and  [Walter Lim](mailto:waltissomewhere@gmail.com)
 
 ##License
 ###MIT License
