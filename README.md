@@ -6,6 +6,11 @@ Written with HTML5 and JS
 
 Maintained by [Julian De Villiers](mailto:me@juliandv.com) and  [Walter Lim](mailto:waltissomewhere@gmail.com)
 
+###To Do
+
+1. Nicer responsive site
+2. Implement some css transforms
+
 ##License
 ###MIT License
 
