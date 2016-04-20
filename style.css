@@ -29,6 +29,7 @@ body {
     max-width: 700px;
     font-size: 24px;
     font-weight: 300;
+        padding-bottom: 50px;
 }   
 .headerContent {
     margin: 0 5%;
