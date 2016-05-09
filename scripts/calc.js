@@ -1,7 +1,11 @@
 
         var fee;
         var price;
+<<<<<<< HEAD
 
+=======
+
+>>>>>>> origin/master
         function eval(){
             var price = document.frm.salePrice.value;
             var payNowFee = 0;
@@ -20,12 +24,20 @@
             {
                 payNowFee = (price * 0.0195)
             };
+<<<<<<< HEAD
 
+=======
+
+>>>>>>> origin/master
             if (document.getElementById('topSeller').checked) {topSeller = fee * 0.15};
             fee = fee + payNowFee - topSeller;
 
 
+<<<<<<< HEAD
 
+=======
+
+>>>>>>> origin/master
 if (document.getElementById('myonoffswitch').checked == false) {
     afterFee = price - fee;
     afterFee = afterFee.toFixed(2);
@@ -34,7 +46,15 @@ if (document.getElementById('myonoffswitch').checked == false) {
     fee = fee.toFixed(2);
     document.frm1.result.value = '$' + fee;
 }
+<<<<<<< HEAD
 
         }
 
 
+=======
+
+        }
+
+
+
+>>>>>>> origin/master
