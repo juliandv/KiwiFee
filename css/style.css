@@ -149,6 +149,18 @@ input[type=checkbox] {
     border: none;
     background-color: #009d62;
     color: #ffffff;
+<<<<<<< HEAD:style.css
+=======
+    text-align: center;
+    padding: 15px 5px 5px 5px;
+    line-height: 1.6;
+    position: absolute;
+    bottom: 0px;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+>>>>>>> c522844008fc8557318ad98729b9f70d7cb5ce91:css/style.css
 }
 
 #resultText {
