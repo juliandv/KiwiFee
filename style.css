@@ -6,182 +6,251 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 	font: inherit;
 	vertical-align: baseline;
 }
-
 header {
-    background-color: #ffffff;
-    color: #000000;
-    margin-bottom: 20px;
+    background-color: #7B1FA2;
+    color: #fff;
+    margin-bottom: 0px;
     font-size: 28px;
     font-weight: 300;
     padding: 10px 0;
+    height: 80px;
 }
-p {margin 0;}
+
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #1cc988;
-    margin: 0 0 200px; /* bottom = footer height */
-
+    background-color: #9C27B0;
+    /* bottom = footer height */
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    font-size: 1.3rem;
 }
 
 .content {
+    flex: 1;
     margin: 0 auto;
+    margin-top: -30px;
+    background-color: #fff;
+    color: #000;
     width: 90%;
-    max-width: 700px;
-    font-size: 24px;
+    max-width: 900px;
     font-weight: 300;
-        padding-bottom: 50px;
-}   
+    box-sizing: border-box;
+    padding: 30px 80px;
+}
+
 .headerContent {
     margin: 0 5%;
     font-size: 32px;
 }
-#subtitle {
-    color: #ffffff;
-}
+
 input {
-  font-size:24px;
-  padding:10px 10px 10px 5px;
-  display:block;
-  width:100%;
-  border:none;
-  border-bottom:1px solid #757575;
-}
-input:focus     { outline:none; }
-#calculate {
-    font-size:32px;
-    padding:10px 10px 10px 5px;
-    display:block;
-    width:100%;
-    border:none;
-    background-color: #009d62;
-    color: #ffffff;
-}
-
-footer {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 200px;
-    width: 100%; 
-/* 
-    height: 30%;
-    min-height: 160px;
-
-    max-height: 250px;
-    width: 100%;
-*/
-    margin: 0 auto;
-    font-size: 22px;
+    font-size: 1.8rem;
     font-weight: 300;
-    color: #000000;
-    background-color: #ff5508;
-    padding: 20px 0;
-}
-#resultText {
-    background-color: transparent;
-    border-style: none;
     display: inline;
-    font-size: 52px;
-    font-weight: 200;
-    color: #ffffff;
+    width: calc(100% - 20px);
+    border: none;
 }
 
+.currencyinput {
+    font-size: 1.8rem;
+    clear: both;
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid #757575;
+}
 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
 
+input:focus {
+    outline: none;
+}
 
-
-
-/**
- * Start by hiding the checkboxes
- */
 input[type=checkbox] {
-	visibility: hidden;
+    visibility: hidden;
 }
 
-/**
- * Checkbox Five
- */
+#checks {
+    margin: 40px 0;
+}
+
 .checkboxFive {
-	width: 35px;
-	margin: 20px 0;
-	position: relative;
+    width: 35px;
+    position: relative;
+    height: 40px;
 }
 
-
-
-/**
- * Create the box for the checkbox
- */
 .checkboxFive label {
-	cursor: pointer;
-	position: absolute;
-	width: 35px;
-	height: 35px;
-	top: 0;
-  	left: 0;
-	background: #ffffff;
-	border:1px solid #ddd;
+    cursor: pointer;
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    top: 0;
+    left: 0;
+    background: #ffffff;
+    border: 1px solid #ddd;
 }
 
 
+/*Checkbox tick*/
 
-/**
- * Display the tick inside the checkbox
- */
 .checkboxFive label:after {
-	opacity: 0.2;
-	content: '';
-	position: absolute;
-	width: 20px;
-	height: 10px;
-	background: transparent;
-	top: 6px;
-	left: 5px;
-	border: 5px solid #ff5508;
-	border-top: none;
-	border-right: none;
-
-	-webkit-transform: rotate(-45deg);
-	-moz-transform: rotate(-45deg);
-	-o-transform: rotate(-45deg);
-	-ms-transform: rotate(-45deg);
-	transform: rotate(-45deg);
+    opacity: 0.2;
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 10px;
+    background: transparent;
+    top: 6px;
+    left: 5px;
+    border: 5px solid #ff5508;
+    border-top: none;
+    border-right: none;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
 }
 
-
-
-/**
- * Create the hover event of the tick
- */
 .checkboxFive label:hover::after {
-	opacity: 0.5;
+    opacity: 0.5;
 }
 
-/**
- * Create the checkbox state for the tick
- */
+
+/* Create the checkbox state for the tick */
+
 .checkboxFive input[type=checkbox]:checked + label:after {
-	opacity: 1;
+    opacity: 1;
 }
 
+.checkLabel {
+    float: left;
+    width: 250px;
+    margin-left: 45px;
+    font-size: 1.3rem;
+    padding-top: 4px;
+}
 
 #frm {
     padding: 30px 0;
 }
 
+#calculate {
+    font-size: 32px;
+    padding: 10px;
+    margin: 0 auto;
+    display: block;
+    width: 80%;
+    border: none;
+    background-color: #009d62;
+    color: #ffffff;
+}
 
+#resultText {
+    border-style: none;
+    display: block;
+    font-size: 52px;
+    font-weight: 200;
+}
 
-.checkLabel {
-    float:left;
-    width: 250px;
-    margin-left: 45px;
-    font-size: 28px;
+.onoffswitch {
+    position: relative;
+    float: left;
+    width: 200px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    margin-bottom: 60px;
+}
+
+.onoffswitch-checkbox {
+    display: none;
+}
+
+.onoffswitch-label {
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    /*    border: 2px solid #999999; border-radius: 50px;*/
+}
+
+.onoffswitch-inner {
+    display: block;
+    width: 200%;
+    margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+
+.onoffswitch-inner:before,
+.onoffswitch-inner:after {
+    display: block;
+    float: left;
+    width: 50%;
+    height: 34px;
+    padding: 0;
+    line-height: 34px;
+    font-size: 18px;
+    color: white;
+    box-sizing: border-box;
+}
+
+.onoffswitch-inner:before {
+    content: "Fees only";
+    padding-left: 12px;
+    background-color: #f3f3f3;
+    color: #000000;
+}
+
+.onoffswitch-inner:after {
+    content: "After fees";
+    padding-right: 12px;
+    background-color: #f3f3f3;
+    color: #000000;
+    text-align: right;
+}
+
+.onoffswitch-switch {
+    display: block;
+    width: 45px;
+    margin: -5.5px;
+    background: #1CC988;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 162px;
+    /*    border: 2px solid #999999;*/
+    border-radius: 50px;
+    transition: all 0.3s ease-in 0s;
+}
+
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px;
 }
 
 .resultContent {
-        margin: 0 auto;
+    margin: 0 auto;
     width: 90%;
     max-width: 700px;
+}
+
+footer {
+    width: 100%;
+    margin: 0 auto;
+    font-size: 22px;
+    font-weight: 300;
+    color: #000000;
+    background-color: #263238;
+    padding: 10px 0;
+    box-sizing: border-box;
 }
 
 #footerText {
@@ -189,69 +258,26 @@ input[type=checkbox] {
     color: #ffffff;
     text-align: center;
     padding: 15px 0 5px 0;
-    position: absolute;
-    bottom: 0px;
-    left:0;
-    right:0;
-    margin-left:auto;
-    margin-right:auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+#footerText a {
+    color: aquamarine;
+}
 
-
-
-
-
-
-
-.onoffswitch {
-    position: relative; width: 200px;
-    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
-    margin: auto;
-}
-.onoffswitch-checkbox {
-    display: none;
-}
-.onoffswitch-label {
-    display: block; overflow: hidden; cursor: pointer;
-/*    border: 2px solid #999999; border-radius: 50px;*/
-}
-.onoffswitch-inner {
-    display: block; width: 200%; margin-left: -100%;
-    transition: margin 0.3s ease-in 0s;
-}
-.onoffswitch-inner:before, .onoffswitch-inner:after {
-    display: block; float: left; width: 50%; height: 34px; padding: 0; line-height: 34px;
-    font-size: 18px; color: white; 
-    box-sizing: border-box;
-}
-.onoffswitch-inner:before {
-    content: "Fees only";
-    padding-left: 12px;
-    background-color: #FFFFFF; color: #ff5508;
-}
-.onoffswitch-inner:after {
-    content: "After fees";
-    padding-right: 12px;
-    background-color: #FFFFFF; color: #ff5508;
-    text-align: right;
-}
-.onoffswitch-switch {
-    display: block; width: 45px; margin: -5.5px;
-    background: #1CC988;
-    position: absolute; top: 0; bottom: 0;
-    right: 162px;
-/*    border: 2px solid #999999;*/
-    border-radius: 50px;
-    transition: all 0.3s ease-in 0s; 
-}
-.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
-    margin-left: 0;
-}
-.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
-    right: 0px; 
-}
-html {
-    position: relative;
-    min-height: 100%;
+@media screen and (max-width: 720px) {
+    .content {
+        width: 100%;
+        margin-top: 60px;
+    }
+    header {
+        position: fixed;
+        width: 100%;
+        top: 0px;
+        left: 0px;
+        height: 80px;
+        box-sizing: border-box;
+        border-top: 10px solid #9C27B0;
+    }
 }

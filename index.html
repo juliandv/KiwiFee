@@ -1,11 +1,11 @@
 <html>
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta id="meta" name="viewport"
-content="width=device-width; initial-scale=1.0" />
-<title>Kiwi Fee - A Success Fee Calculator For Trade Me</title>
-<link rel="stylesheet" type="text/css" href="style.css">
-<link href='https://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta id="meta" name="viewport" content="width=device-width; initial-scale=1.0" />
+    <title>Kiwi Fee - A Success Fee Calculator For Trade Me</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
@@ -18,84 +18,90 @@ content="width=device-width; initial-scale=1.0" />
         <p id="subtitle">A simple tool to find out Trade Me success fee costs</p>
         <form name="frm" id="frm">
             Sale Price
-            <input name="salePrice" value="" placeholder="$0.00" type="number" step="0.01">
+            <span class="currencyinput">$<input name="salePrice" value="" placeholder="0.00" type="number" step="0.01"></span>
 
-            
-            <div class="checkboxFive">
-                <span class="checkLabel">Top Seller</span>
-                <input type="checkbox" value="1" id="topSeller" name="topSeller">
-                <label for="topSeller"></label>
+            <div id="checks">
+                <div class="checkboxFive">
+                    <span class="checkLabel">Top Seller discount</span>
+                    <input type="checkbox" value="1" id="topSeller" name="topSeller">
+                    <label for="topSeller"></label>
+                </div>
+
+                <div class="checkboxFive">
+                    <span class="checkLabel">Pay Now</span>
+                    <input type="checkbox" value="1" id="payNow" name="payNow">
+                    <label for="payNow"></label>
+                </div>
             </div>
-            
-            <div class="checkboxFive">
-                <span class="checkLabel">Pay Now</span>
-                <input type="checkbox" value="1" id="payNow" name="payNow">
-                <label for="payNow"></label>
-            </div>
-            
             <input type="button" id="calculate" value="Calculate" onclick="eval()">
         </form>
-    </div>
-    
-        <footer>
-            <div class="resultContent">
-                
-<div class="onoffswitch">
-    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" onclick="eval()">
-    <label class="onoffswitch-label" for="myonoffswitch">
-        <span class="onoffswitch-inner"></span>
-        <span class="onoffswitch-switch"></span>
-    </label>
-</div>
-                
-                <form name="frm1"><input id="resultText" name="result" type="text" value="$0.00" disabled></form>
+
+        <div class="resultContent">
+            <form name="frm1">
+                <input id="resultText" name="result" type="text" value="$0.00" disabled>
+            </form>
+
+            <div class="onoffswitch">
+                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" onclick="eval()">
+                <label class="onoffswitch-label" for="myonoffswitch">
+                    <span class="onoffswitch-inner"></span>
+                    <span class="onoffswitch-switch"></span>
+                </label>
             </div>
-            <p id="footerText">Created by Julian de Villiers 2016 - <a href="http://www.juliandv.com">Juliandv.com</a><br>Fees are for general items and are of the new simplified fees, as of February 2016. For more info on Trade Me fees <a href="http://www.trademe.co.nz/help/18/fees-and-fee-calculator">click here</a><br>
+        </div>
+    </div>
+
+    <footer>
+        <p id="footerText">Created by Julian de Villiers 2016 - <a href="http://www.juliandv.com">Juliandv.com</a>
+            <br>Fees are for general items and are of the new simplified fees, as of May 2016. For more info on Trade Me fees <a href="http://www.trademe.co.nz/help/18/fees-and-fee-calculator">click here</a>
+            <br>
             <a href="http://mystrd.at/modern-clean-css-sticky-footer/">Sticky Footer</a> - <a href="http://proto.io/freebies/onoff/">CSS3 Switch</a></p>
-        </footer> 
-    
+    </footer>
+
     <script>
         var fee;
         var price;
-        
-        function eval(){
+
+        function eval() {
             var price = document.frm.salePrice.value;
             var payNowFee = 0;
             var topSeller = 0;
-            var afterFee  = 0;
+            var afterFee = 0;
             fee = price * 0.079;
-            if (fee > 149) {fee = 149};
-            if (price <= 1) {fee = 0};
+            if (fee > 149) {
+                fee = 149
+            };
+            if (price <= 1) {
+                fee = 0
+            };
 
             if (document.getElementById('payNow').checked &&
-                document.getElementById('topSeller').checked )
-            {
+                document.getElementById('topSeller').checked) {
                 payNowFee = (price * 0.0165)
             } else if (document.getElementById('payNow').checked &&
-                       document.getElementById('topSeller').checked == false)
-            {
+                document.getElementById('topSeller').checked == false) {
                 payNowFee = (price * 0.0195)
             };
-            
-            if (document.getElementById('topSeller').checked) {topSeller = fee * 0.15};
+
+            if (document.getElementById('topSeller').checked) {
+                topSeller = fee * 0.15
+            };
             fee = fee + payNowFee - topSeller;
 
 
-            
-if (document.getElementById('myonoffswitch').checked == false) {
-    afterFee = price - fee;
-    afterFee = afterFee.toFixed(2);
-    document.frm1.result.value = '$' + afterFee;
-} else if (document.getElementById('myonoffswitch').checked == true) {
-    fee = fee.toFixed(2);
-    document.frm1.result.value = '$' + fee;
-}
-            
-        }
-        
 
-        
+            if (document.getElementById('myonoffswitch').checked == false) {
+                afterFee = price - fee;
+                afterFee = afterFee.toFixed(2);
+                document.frm1.result.value = '$' + afterFee;
+            } else if (document.getElementById('myonoffswitch').checked == true) {
+                fee = fee.toFixed(2);
+                document.frm1.result.value = '$' + fee;
+            }
+
+        }
     </script>
-    
+
 </body>
+
 </html>
