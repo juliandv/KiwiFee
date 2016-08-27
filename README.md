@@ -4,12 +4,15 @@ Fee calculation web app for [Trade Me](https://www.trademe.co.nz)
 
 Written with HTML5 and JS
 
-Maintained by [Julian De Villiers](mailto:me@juliandv.com) and  [Walter Lim](mailto:waltissomewhere@gmail.com)
-
 ###To Do
 
 1. Nicer responsive site
 2. Implement some css transforms
+
+###Future Implementation
+
+1. Grab the current fees using Trade Me API
+
 
 ##License
 ###MIT License
