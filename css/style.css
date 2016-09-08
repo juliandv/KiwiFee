@@ -7,7 +7,8 @@ header {
     padding: 10px 0;
     height: 80px;
     z-index: 10;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);}
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -20,17 +21,17 @@ body {
 }
 
 .content {
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);    z-index: 20;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    z-index: 20;
     flex: 1;
     margin: 0 auto;
-    margin-top: -30px;
+    margin-top: 70px;
     background-color: #fff;
     color: #000;
-    width: 90%;
-    max-width: 900px;
+    width: 100%;
     font-weight: 300;
     box-sizing: border-box;
-    padding: 30px 80px;
+    padding: 30px 20px;
 }
 
 .headerContent {
@@ -139,7 +140,7 @@ input[type=checkbox] {
     padding: 10px;
     margin: 0 auto;
     display: block;
-    width: 80%;
+    width: 100%;
     border: none;
     background-color: #009d62;
     color: #ffffff;
@@ -245,6 +246,8 @@ footer {
     background-color: #263238;
     padding: 10px 0;
     box-sizing: border-box;
+    position: absolute;
+    top: 100vh;
 }
 
 #footerText {
@@ -260,11 +263,7 @@ footer {
     color: aquamarine;
 }
 
-@media screen and (max-width: 720px) {
-    .content {
-        width: 100%;
-        margin-top: 60px;
-    }
+@media (max-width: 720px) {
     header {
         position: fixed;
         width: 100%;
@@ -274,4 +273,24 @@ footer {
         box-sizing: border-box;
         border-top: 10px solid #9C27B0;
     }
+}
+
+@media (min-width: 720px) {
+    .content {
+        width: 90%;
+        max-width: 900px;
+        margin-top: -30px;
+    }
+    /*
+    #calculate {
+        font-size: 32px;
+        padding: 10px;
+        margin: 0 auto;
+        display: block;
+        width: 100%;
+        border: none;
+        background-color: #009d62;
+        color: #ffffff;
+    }
+*/
 }
