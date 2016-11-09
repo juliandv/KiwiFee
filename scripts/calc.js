@@ -3,7 +3,8 @@
         var price;
 
         function eval(){
-            var price = document.frm.salePrice.value;
+            var price     = document.frm.salePrice.value;
+            var itemCost  = document.frm.itemCost.value;
             var payNowFee = 0;
             var topSeller = 0;
             var afterFee  = 0;
@@ -28,10 +29,9 @@
 
 if (document.getElementById('myonoffswitch').checked == false) {
     afterFee = price - fee;
-    afterFee = afterFee.toFixed(2);
-    document.frm1.result.value = '$' + afterFee;
+    document.frm1.result.value = '$' + (afterFee - itemCost).toFixed(2);
 } else if (document.getElementById('myonoffswitch').checked == true) {
-    fee = fee.toFixed(2);
+    fee = (fee.toFixed(2));
     document.frm1.result.value = '$' + fee;
 }
 
