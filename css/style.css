@@ -7,6 +7,32 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 	font: inherit;
 	vertical-align: baseline;
 }
+
 body {
     font-family: 'Libre Franklin', sans-serif;
+    background-color: #25D4B1;
+    background-image: linear-gradient(-180deg, #25D4B1 0%, #0BADA3 100%);
+}
+h1 {
+    font-size: 24px;
+    color: #ffffff;
+}
+h2 {
+    display: block;
+    color: #ffffff;
+}
+img {
+    float: left;
+}
+
+.header {
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.titles {
+    float: left;
+    display: block;
+    margin-left: 15px;
 }
